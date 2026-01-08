@@ -26,4 +26,4 @@ Ce projet a pour but de :
 
 1. Cloner le dépôt :
 ```bash
-
+https://github.com/Discolab-G/qa-data-foundations.git
