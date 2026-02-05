@@ -27,6 +27,15 @@ const javascript = {
     {refID: 'JS_ASYNC', coefficient: 17, acquisition: 0},
     {refID: 'JS_DEBUGGING', coefficient: 12, acquisition: 0}
   ]
+  proof_of_acquisition: {
+    type: 'project',
+    title: 'Self-training dashboard'
+    repository: null // A mettre à jour avec le lien vers le repository du projet de self-training
+    description: null // A mettre à jour avec une description du projet de self-training et des compétences démontrées
+    date_completed: null // A mettre à jour avec la date de complétion du projet de self-training 
+    demonstrates: ['JS_SYNTAX', 'JS_FUNCTIONS', 'JS_DOM', 'JS_DATA_STRUCTURES', 'JS_ASYNC', 'JS_DEBUGGING']  
+  }
+  niveauCalcule: null // A mettre à jour avec la logique de calcul appropriée 
 };
 
 // Définition de la sous-compétence Syntax and Fundamentals
@@ -36,7 +45,6 @@ const syntaxAndFundamentals = {
   type: 'subskill',
   acquisition: 0,
   description: 'Mastery of JavaScript basic syntax including variables, data types, operators and control structures.',
-  proof_of_acquisition: null
 };
 
 // Définition de la sous-compétence Functions and Scope
@@ -46,7 +54,6 @@ const functionsAndScope = {
   type: 'subskill',
   acquisition: 0,
   description: 'Mastery of functions and scope in JavaScript, including nested functions, closures, and local/global variables.',
-  proof_of_acquisition: null
 };
 
 // Définition de la sous-compétence DOM Manipulation
@@ -56,7 +63,6 @@ const domManipulation = {
   type: 'subskill',
   acquisition: 0,
   description: 'Ability to manipulate the Document Object Model (DOM) in JavaScript, including selection, modification and deletion of HTML elements.',
-  proof_of_acquisition: null
 };
 
 // Définition de la sous-compétence Data Structures and Iteration
@@ -66,7 +72,6 @@ const dataStructuresAndIteration = {
   type: 'subskill',
   acquisition: 0,
   description: 'Understanding of JavaScript data structures (arrays, objects) and iteration techniques (loops, array methods).',
-  proof_of_acquisition: null
 };
 
 // Définition de la sous-compétence Asynchronous Programming and API
@@ -76,7 +81,6 @@ const asynchronousProgrammingAndAPI = {
   type: 'subskill',
   acquisition: 0,
   description: 'Mastery of asynchronous programming in JavaScript, including promises, async/await, and interaction with RESTful APIs.',
-  proof_of_acquisition: null
 };
 
 // Définition de la sous-compétence Debugging and Best Practices
@@ -86,7 +90,6 @@ const debuggingAndBestPractices = {
   type: 'subskill',
   acquisition: 0,
   description: 'Ability to debug JavaScript code and follow coding best practices to ensure code quality and maintainability.',
-  proof_of_acquisition: null
 };
 
 // Définition de la compétence primaire Cypress
@@ -102,47 +105,51 @@ const cypress = {
       {refID: 'CYPRESS_CICD', coefficient: 10, acquisition: 0},
       {refID: 'JS', coefficient: 70, acquisition: null } // Référence à la compétence JavaScript
     ]
+    proof of acquisition: {
+      type: 'project',
+      title: null, // A mettre à jour avec le titre du projet de test automatisé utilisant Cypress
+      repository: null, // A mettre à jour avec le lien vers le repository du projet de test automatisé utilisant Cypress
+      description: null, // A mettre à jour avec une description du projet de test automatisé utilisant Cypress et des compétences démontrées
+      date_completed: null, // A mettre à jour avec la date de complétion du projet de test automatisé utilisant Cypress
+      demonstrates: ['CYPRESS_STRUCTURE', 'CYPRESS_SELECTORS', 'CYPRESS_API', 'CYPRESS_CUSTOM', 'CYPRESS_CICD', 'JS']
+    }
+    niveauCalcule: null // A mettre à jour avec la logique de calcul appropriée 
 };    
 
 // Définition de la compétence secondaire "test structure and syntax"
-const teststructure = {
+const cypressTestStructure = {
     id: 'CYPRESS_STRUCTURE',
     label: 'Test Structure and Syntax',
     type : 'subskill',
     acquisition: 0,
     description: 'Ability to structure and organize tests using Cypress syntax, including test suites, hooks, and basic assertions.', 
-    proof_of_acquisition: null
 };
 
 // Définition de la compétence secondaire "Selectors and Element Interaction"
-const selectors = {
+const cypressSelectors = {
     id: 'CYPRESS_SELECTORS',
     label: 'Selectors and Element Interaction',
     type : 'subskill',
     acquisition: 0,
     description: 'Proficiency in selecting DOM elements and simulating user interactions through Cypress commands.', 
-    proof_of_acquisition: null
 };
 
 // Définition de la competence secondaire "API Testing and Network Management"
-const apiTesting = {
+const cypressApiTesting = {
     id: 'CYPRESS_API',
     label: 'API Testing and Network Management',
     type : 'subskill',
     acquisition: 0,
-    description: 'Expertise in testing APIs and managing network requests using Cypress interception capabilities.'
-,
-    proof_of_acquisition: null
+    description: 'Expertise in testing APIs and managing network requests using Cypress interception capabilities.',
 };
 
 // Définition de la compétence secondaire "Custom Commands and Reusability"
-const customCommands = {
+const cypressCustomCommands = {
     id: 'CYPRESS_CUSTOM',
     label: 'Custom Commands and Reusability',
     type : 'subskill',
     acquisition: 0,
     description: 'Skill in creating reusable custom commands and implementing design patterns like Page Object Model.',
-    proof_of_acquisition: null
 };
 
 // Définition de la compétence secondaire "Cypress in CI/CD Pipelines"
@@ -152,6 +159,97 @@ const cypressCICD = {
     type : 'subskill',
     acquisition: 0,
     description: 'Capability to integrate Cypress tests into CI/CD pipelines and generate comprehensive test reports.',
-    proof_of_acquisition: null
 };
 
+// Définition de la compténce primaire "Test Methodologies"
+const testMethodologies = {
+    id: 'TEST_METHOD',
+    label: 'Test Methodologies',
+    type: 'concept',
+    subskills: [
+      {refID: 'TEST_FUNDAMENTALS', coefficient: 15, acquisition: 65},
+      {refID: 'TEST_DESIGN', coefficient: 22, acquisition: 45},
+      {refID: 'TEST_STRATEGY', coefficient: 18, acquisition: 35},
+      {refID: 'TEST_DEFECT', coefficient: 12, acquisition: 55},
+      {refID: 'TEST_AUTOMATION_STRATEGY', coefficient: 20, acquisition: 25},
+      {refID: 'TEST_AGILE', coefficient: 13, acquisition: 40}
+    ]
+    proof of acquisition: {
+      type: 'certifcation_and_appplication',
+      certifiation: {
+        name: 'ISTQB Foundation Level',
+        date: null,
+        credential_url: null // A mettre à jour avec le lien vers la certification ISTQB Foundation Level obtenue
+      },
+    practical_application: {
+      project: 'Self-training dashboard',
+      repository: null, // A mettre à jour avec le lien vers le repository du projet de self-training démontrant l'application pratique des méthodologies de test
+      description: 'Application of test design techniques and automation strategy in real project'
+    },
+    niveauCalcule: null // A mettre à jour avec la logique de calcul appropriée 
+};
+
+// Définition du subskill Test Fundamentals and Terminology
+const testFundamentals = {
+    id: 'TEST_FUNDAMENTALS',
+    label: 'Test Fundamentals and Terminology',
+    type : 'subskill',
+    acquisition: 65,
+    description: 'Understanding of fundamental testing concepts, test types hierarchy, and standard QA terminology used across the industry.', 
+};
+
+// Défintion du subskill Test Design Techniques
+const testDesignTechniques = {
+    id: 'TEST_DESIGN',
+    label: 'Test Design Techniques',
+    type : 'subskill',
+    acquisition: 45,
+    description: 'Proficiency in applying test design techniques such as boundary value analysis, equivalence partitioning, and decision tables to create effective test cases.', 
+};
+
+// Définition du subskill Test Strategy and Planning
+const testStrategyAndPlanning = {
+    id: 'TEST_STRATEGY',
+    label : 'Test Strategy and Planning',
+    type : 'subskill',
+    acquisition: 35,
+    description: 'Ability to define comprehensive test strategies including risk analysis, coverage planning, and entry/exit criteria definition.',
+};
+
+// Définition du subskill Defect Management and Reporting
+const defectManagementAndReporting = {
+    id: 'TEST_DEFECT',
+    label: 'Defect Management and Reporting',
+    type : 'subskill',
+    acquisition: 55,
+    description: 'Expertise in defect lifecycle management, writing clear and actionable bug reports, and effectively communicating issues to development teams.',
+};
+
+// Définition du subskill Automation Strategy and Best Practices
+const automationStrategyAndBestPractices = {
+    id: 'TEST_AUTOMATION_STRATEGY',
+    label: 'Automation Strategy and Best Practices',
+    type : 'subskill',
+    acquisition: 25,
+    description: 'Knowledge of automation best practices including when to automate, maintainability patterns, and test data management strategies.',
+};
+
+// Définition d subskill QA in Agile/DevOps Context
+const qaInAgileDevOpsContext = {
+    id: 'TEST_AGILE',
+    label: 'QA in Agile/DevOps Context',
+    type : 'subskill',
+    acquisition: 40,
+    description: 'Understanding of QA role in Agile and DevOps environments, including continuous testing, shift-left practices, and cross-functional collaboration.',
+};
+
+// Définition de la compétence primaire "CI/CD and DevOps Tools"
+/* 
+Major changes to be made or structure to be accomodated to update the CI/CD and DevOps Tools competency with the following subskills:
+- CI/CD Concepts and Best Practices
+- Jenkins and Pipeline Automation 
+- Docker and Containerization
+- Kubernetes and Orchestration
+- GitHub Actions and Workflow Automation
+- Monitoring and Logging in DevOps
+*/  
