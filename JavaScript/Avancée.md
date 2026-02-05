@@ -9,3 +9,9 @@ Code couleur mis en place. Index des types d'éléments et de la ponctuation mis
  SET : 
  - number_game_errors.html as code du debug. 
  - guess_number.html as working code to overwrite on. 
+
+## Jour 3
+
+Dashboard project full filling on js part. 
+Major change on proof of acquisition : one proof of acquisition adopted by primary competence.
+Removal of coding aid for learning purpose failed. 

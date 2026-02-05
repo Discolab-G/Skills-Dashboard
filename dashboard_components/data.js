@@ -8,7 +8,6 @@ const projectQA = {
     { refId: 'JS', coefficient: 22 },
     { refId: 'TEST_METHOD', coefficient: 20 },
     { refId: 'CICD', coefficient: 15 },
-    { refId: 'GITHUB', coefficient: 12 },
     { refId: 'HTML_CSS', coefficient: 8 }
   ]
   niveauCalcule: null // A mettre à jour avec la logique de calcul appropriée 
@@ -241,4 +240,156 @@ const qaInAgileDevOpsContext = {
     type : 'subskill',
     acquisition: 40,
     description: 'Understanding of QA role in Agile and DevOps environments, including continuous testing, shift-left practices, and cross-functional collaboration.',
+};
+
+// Définition de la compétence secondaire "CI/CD and DevOps Tools"
+const cicdIntegrationAndReporting = {
+    id: 'CICD',
+    label: 'CI/CD Integration and Repotring',
+    type: 'tool',
+    subskills: [
+      {refID: 'CICD_GIT_GITHUB', coefficient: 25, acquisition: 0},
+      {refID: 'CICD_CONCEPTS', coefficient: 18, acquisition: 0},
+      {refID: 'CICD_PIPELINE', coefficient: 22, acquisition: 0},
+      {refID: 'CICD_TESTING', coefficient: 20, acquisition: 0},
+      {refID: 'CICD_DEPLOYMENT', coefficient: 10, acquisition: 0},
+      {refID: 'CICD_MONITORING', coefficient: 12, acquisition: 0},
+    ]
+    proof of acquisition: {
+        type : 'project',
+        title: 'Self_training dashboard CI/CD Pipeline',
+        repository: null, // A mettre à jour avec le lien vers le repository du projet de self-training démontrant l'intégration CI/CD
+        description: null, // A mettre à jour avec une description du projet de self-training démontrant l'intégration CI/CD et des compétences démontrées
+        key_features: [
+            'Automated test execution on push/PR',
+            'Parallel test runs with matrices',
+            'Test report generation and artifact storage',
+            'Automated deployment on main branch'
+        ],
+        demonstrates_subskills: ['CICD_GIT_GITHUB', 'CICD_CONCEPTS', 'CICD_PIPELINE', 'CICD_TESTING', 'CICD_DEPLOYMENT', 'CICD_MONITORING']
+        date_completed: null // A mettre à jour avec la date de complétion du projet de self-training démontrant l'intégration CI/CD
+    },
+    niveauCalcule: null // A mettre à jour avec la logique de calcul appropriée
+};
+
+// Définition du subskill Git and Version Control (adapted to CI/CD context)
+const cicdGitAndVersionControl = {
+    id : 'CICD_GIT_GITHUB',
+    label: 'Git and Version Control',
+    type: 'subskill',
+    acquisition: 0,
+    description: 'Proficiency in Git version control including branching strategies, commit management, merge conflict resolution, and collaborative workflows.',
+};)
+
+// Définition du subskill CI/CD Concepts and Tools
+const cicdConceptsAndPrinciples = {
+    id: 'CICD_CONCEPTS',
+    label: 'CI/CD Concepts and Principles',
+    type: 'subskill',
+    acquisition: 0,
+    description: 'Understanding of CI/CD principles, pipeline stages, integration vs delivery vs deployment distinctions, and DevOps best practices.',
+};
+
+// Définition du subskill CI/CD Pipeline Configuration and Management
+const cicdPipelineConfigurationAndAutomation = {
+    id: 'CICD_PIPELINE',
+    label: 'CI/CD Pipeline Configuration and Automation',
+    type: 'subskill',
+    acquisition: 0,
+    description: 'Ability to configure and maintain CI/CD pipelines using declarative syntax, including jobs orchestration, environment management, and parallel execution strategies.',
+};
+
+// Définition du subskill Automated Testing Integration
+const cicdAutomatedTestingIntegration = {
+    id: 'CICD_TESTING',
+    label: 'Automated Testing Integration',
+    type: 'subskill',
+    acquisition: 0,
+    description: 'Expertise in integrating automated test suites into CI/CD pipelines, including headless execution, artifact management, and failure handling.',
+};
+
+// Définition du subskill Deployment and Release Management
+const cicdDeploymentAndReleaseManagement = {
+    id: 'CICD_DEPLOYMENT',
+    label: 'Deployment and Release Management',
+    type: 'subskill',
+    acquisition: 0,
+    description: 'Knowledge of deployment strategies, release gating mechanisms, rollback procedures, and production release management.',
+};
+
+// Définition du subsill Monitoring and Reporting 
+const cicdMonitoringAndReporting = {
+    id: 'CICD_MONITORING',
+    label: 'Monitoring and Reporting',
+    type: 'subskill',
+    acquisition: 0,
+    description: 'Skill in implementing build monitoring, generating automated reports, tracking pipeline metrics, and configuring stakeholder notifications.',
+};
+
+// Définition de la compétence HTML x CSS
+const htmlCss = {
+    id: 'HTML_CSS',
+    label: 'HTML and CSS',
+    type: 'language',
+    subskills: [
+      {refID: 'HTML_STRUCTURE', coefficient: 20, acquisition: 0},
+      {refID: 'CSS_SELECTORS', coefficient: 30, acquisition: 0},
+      {refID: 'CSS_LAYOUT', coefficient: 15, acquisition: 0},
+      {refID: 'DEVTOOLS', coefficient: 25, acquisition: 0},
+      {refID: 'HTML_ACCESSIBILITY', coefficient: 10, acquisition: 0}
+    ],
+    proof of acquisition: {
+        type: 'project',
+        title: 'Self-training dashboard',
+        repository: null, // A mettre à jour avec le lien vers le repository du projet de self-training démontrant les compétences en HTML et CSS
+        description: null, // A mettre à jour avec une description du projet de self-training démontrant les compétences en HTML et CSS et des compétences démontrées
+        date_completed: null, // A mettre à jour avec la date de complétion du projet de self-training démontrant les compétences en HTML et CSS
+        demonstrates: ['HTML_STRUCUTURE', 'CSS_SELECTORS', 'CSS_LAYOUT', 'DEVTOOLS', 'HTML_ACCESSIBILITY']
+    },
+    niveauCalcule: null // A mettre à jour avec la logique de calcul appropriée     
+};
+
+// Définition du subskill HTML Structure and Semantics
+const htmlStructureAndSemantics = {
+    id: 'HTML_STRUCTURE',
+    label: 'HTML Structure and Semantics',
+    type: 'subskill',
+    acquisition: 0,
+    description: 'Understanding of HTML semantic structure, DOM hierarchy, essential attributes, and interactive elements for effective test automation.',
+};
+
+// Définition dusubskill CSS Selectors and Specificity
+const cssSelectorsAndSpecificity = {
+    id: 'CSS_SELECTORS',
+    label: 'CSS Selectors and Specificity',
+    type: 'subskill',
+    acquisition: 0,
+    description: 'Proficiency in CSS selector syntax, specificity rules, and ability to craft robust selectors for reliable element targeting in automated tests.',
+};
+
+// Définition du subskill CSS Layout Fundamentals
+const cssLayoutFundamentals = {
+    id: 'CSS_LAYOUT',
+    label: 'CSS Layout Fundamentals',
+    type: 'subskill',
+    acquisition: 0,
+    description: 'Basic knowledge of CSS box model, layout mechanisms, and positioning for understanding page structure and debugging visual issues.',
+};
+
+// Définition du subskill Developer Tools and Debugging
+const developerToolsAndDebugging = {
+    id: 'DEVTOOLS',
+    label: 'Developer Tools and Debugging',
+    type: 'subskill',
+    acquisition: 0,
+    description: 'Expertise in using browser Developer Tools for element inspection, selector identification, network analysis, and troubleshooting test failures.',
+};
+
+// Définition du subskill Accessibility and Best Practices
+const accessibilityAndBestPractices = {
+    id: 'HTML_ACCESSIBILITY',
+    label: 'Accessibility and Best Practices',
+    type: 'subskill',
+    acquisition: 0,
+    description: 'Awareness of accessibility principles, ARIA attributes, semantic HTML usage, and their impact on application testability and quality.',
 };
