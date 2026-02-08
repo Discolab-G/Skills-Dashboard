@@ -36,7 +36,7 @@ body {
   font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont,
                'Segoe UI', Roboto, Arial, sans-serif;
   background: var(--color-page-bg);
-  color: var (--color-text-main);             
+  color: var(--color-text-main);             
 }
 
 /* Top bar */
@@ -231,3 +231,103 @@ header .help-btn:hover {
     height: 620px;
   }
 }
+
+/* ===== Skill rings (donut gauges) ===== */
+.rings {
+  position: absolute;
+  inset: 0;              /* fill the orbit container */
+}
+
+.ring {
+  --p: 0;                /* acquisition % (0-100) */
+  --size: 150px;
+  --thickness: 22px;
+
+  width: var(--size);
+  height: var(--size);
+  border-radius: 999px;
+
+  border: none;
+  background: transparent;
+  cursor: pointer;
+
+  position: absolute;    /* we'll place them around later */
+  display: grid;
+  place-items: center;
+  padding: 0;
+
+  color: var(--color-circle-text);
+  font-family: inherit;
+}
+
+/* The gauge graphic */
+.ring::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+
+  background: conic-gradient(
+    var(--color-acquired) calc(var(--p) * 1%),
+    var(--color-not-acquired) 0
+  );
+}
+
+/* Inner hole */
+.ring::after {
+  content: "";
+  position: absolute;
+  inset: var(--thickness);
+  border-radius: 999px;
+  background: var(--color-circle-bg); /* your optional inner */
+}
+
+/* Text inside */
+.ring-text,
+.ring-percent {
+  position: relative;
+  z-index: 1;
+  display: block;
+  text-align: center;
+  line-height: 1.1;
+}
+
+.ring-text {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.ring-percent {
+  margin-top: 6px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* Small node (like your mockup) */
+.ring-node {
+  position: absolute;
+  z-index: 2;
+  width: 20px;
+  height: 20px;
+  border-radius: 999px;
+  background: var(--color-acquired);
+
+  /* place it at top-right-ish */
+  top: 8px;
+  right: 34px;
+}
+
+/* Hover/focus */
+.ring:hover {
+  transform: translate(-50%, -50%) scale(1.02);
+}
+
+.ring:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 4px;
+}
+
+/* Temporary manual positioning (we'll automate later) */
+.ring:nth-child(1) { top: 120px; left: 50%; transform: translate(-50%, -50%); }
+.ring:nth-child(2) { top: 360px; left: 40%; transform: translate(-50%, -50%); }
+.ring:nth-child(3) { top: 360px; left: 60%; transform: translate(-50%, -50%); }
