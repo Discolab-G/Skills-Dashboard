@@ -1,0 +1,333 @@
+/* ===== Global reset (minimal) ===== */
+
+:root {
+  /* ===== Page ===== */
+  --color-page-bg: #f4fafb;
+
+  /* ===== Main identity ===== */
+  --color-primary: #112c53;          /* titles, icons, acquired */
+  --color-acquired: #112c53;
+  --color-not-acquired: #ac0035;
+
+  /* ===== Text ===== */
+  --color-text-main: #112c53;
+  --color-text-muted: #836822;
+  --color-text-alt: #67707e;
+
+  /* ===== Circles ===== */
+  --color-circle-text: #836822;
+  --color-circle-bg: #bcd1f2;
+
+  /* ===== Explanatory blocks / modal ===== */
+  --color-panel-bg: #bcd1f2;
+  --color-panel-text: #836822;       /* or --color-text-alt if needed */
+
+  /* ===== Interaction ===== */
+  --color-hover: rgba(17, 44, 83, 0.08);
+  --color-focus: rgba(17, 44, 83, 0.25);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont,
+               'Segoe UI', Roboto, Arial, sans-serif;
+  background: var(--color-page-bg);
+  color: var(--color-text-main);             
+}
+
+/* Top bar */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  position: relative;
+  height: 70px;
+  padding: 0 16px;
+
+  background: transparent;
+  color: var(--color-primary);
+}
+
+header h1 {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+/* Buttons in the header */
+header button {
+  width: 52px;
+  height: 52px;
+
+  background: transparent;
+  color: var(--color-primary);
+
+  border: none;
+  border-radius: 999px;
+
+  font-size: 24px;
+  cursor: pointer;
+}
+header button:hover {
+  background: var(--color-hover);
+}
+
+header button:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+}
+header .help-btn {
+  background: var(--color-primary);
+  color: #ffffff;
+  font-weight: 800;
+}
+
+header .help-btn:hover {
+  filter: brightness(0.95);
+}
+
+/* ===== Main stage ===== */
+.stage {
+  min-height: calc(100vh - 72px); /* full height minus top bar */
+  display: grid;
+  place-items: center;
+  padding: 28px 16px 40px;
+}
+
+/* Skills section text spacing */
+.skills-overview {
+  width: min(1100px, 96vw);
+}
+
+.section-title {
+  margin: 0 0 8px;
+  font-size: 18px;
+  font-weight: 750;
+  color: var(--color-primary);
+}
+
+.section-intro {
+  margin: 0 0 12px;
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--color-panel-text); /* #836822 */
+}
+
+/* ===== Orbit container ===== */
+.orbit {
+  position: relative;
+  width: min(1050px, 96vw);
+  height: 520px;
+
+  display: grid;
+  place-items: center;
+}
+
+/* ===== Center project disk ===== */
+/* ===== Center: photo + red ring frame ===== */
+/* ===== Center: photo + red ring frame (improved) ===== */
+/* ===== Center: SMALL photo + thin red frame (no white ring) ===== */
+.project-center {
+  position: relative;
+
+  width: 170px;
+  height: 170px;
+  border-radius: 999px;
+
+  /* red frame */
+  background: var(--color-not-acquired);
+  padding: 14px; /* thickness of the red ring */
+
+  display: grid;
+  place-items: center;
+}
+
+/* IMPORTANT: disable previous pseudo-elements if you had them */
+.project-center::before,
+.project-center::after {
+  content: none !important;
+}
+
+/* Photo fills the inside area */
+.avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 999px;
+  overflow: hidden;
+
+  background: var(--color-circle-bg);
+  position: relative;
+  z-index: 1;
+}
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%; /* adjust framing here */
+  display: block;
+}
+
+/* Hide initials now that photo exists */
+.avatar-fallback {
+  display: none;
+}
+
+/* Labels stay on top of everything */
+.center-label {
+  position: absolute;
+  z-index: 2;
+  margin: 0;
+
+  font-size: 10px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+
+/* Place labels slightly outward onto the red ring */
+.center-label--top {
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.center-label--bottom {
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.center-label--left {
+  left: -15px;
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+  transform-origin: center;
+}
+
+.center-label--right {
+  right: 0px;
+  top: 50%;
+  transform: translateY(-50%) rotate(90deg);
+  transform-origin: center;
+}
+
+
+/* Responsive: a bit taller on small screens */
+@media (max-width: 820px) {
+  .orbit {
+    height: 620px;
+  }
+}
+
+/* ===== Skill rings (donut gauges) ===== */
+.rings {
+  position: absolute;
+  inset: 0;              /* fill the orbit container */
+}
+
+.ring {
+  --p: 0;                /* acquisition % (0-100) */
+  --size: 150px;
+  --thickness: 22px;
+
+  width: var(--size);
+  height: var(--size);
+  border-radius: 999px;
+
+  border: none;
+  background: transparent;
+  cursor: pointer;
+
+  position: absolute;    /* we'll place them around later */
+  display: grid;
+  place-items: center;
+  padding: 0;
+
+  color: var(--color-circle-text);
+  font-family: inherit;
+}
+
+/* The gauge graphic */
+.ring::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+
+  background: conic-gradient(
+    var(--color-acquired) calc(var(--p) * 1%),
+    var(--color-not-acquired) 0
+  );
+}
+
+/* Inner hole */
+.ring::after {
+  content: "";
+  position: absolute;
+  inset: var(--thickness);
+  border-radius: 999px;
+  background: var(--color-circle-bg); /* your optional inner */
+}
+
+/* Text inside */
+.ring-text,
+.ring-percent {
+  position: relative;
+  z-index: 1;
+  display: block;
+  text-align: center;
+  line-height: 1.1;
+}
+
+.ring-text {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.ring-percent {
+  margin-top: 6px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* Small node (like your mockup) */
+.ring-node {
+  position: absolute;
+  z-index: 2;
+  width: 20px;
+  height: 20px;
+  border-radius: 999px;
+  background: var(--color-acquired);
+
+  /* place it at top-right-ish */
+  top: 8px;
+  right: 34px;
+}
+
+/* Hover/focus */
+.ring:hover {
+  transform: translate(-50%, -50%) scale(1.02);
+}
+
+.ring:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 4px;
+}
+
+/* Temporary manual positioning (we'll automate later) */
+.ring:nth-child(1) { top: 120px; left: 50%; transform: translate(-50%, -50%); }
+.ring:nth-child(2) { top: 360px; left: 40%; transform: translate(-50%, -50%); }
+.ring:nth-child(3) { top: 360px; left: 60%; transform: translate(-50%, -50%); }
