@@ -148,7 +148,7 @@ header .help-btn:hover {
 }
 
 .help-header h2 {
-  margin: 0;
+  margin: 10px;
   font-size: 16px;
   font-weight: 700;
 }
@@ -193,9 +193,14 @@ header .help-btn:hover {
 
 
 
-/* Starting point of the main content, and of he hand made grid */
+/* Starting point of the main content*/
+section {
+    background-color: #f4fafb;
+    padding : 40px 20px;
+}
+
 .writing {
-    background-color: #112c53;
+    padding : 30px 20px;
 }
 
 
@@ -203,10 +208,30 @@ header .help-btn:hover {
     background-color: #112c53;
 }
 
-.title {
-    position: absolute;
-    top: 30%;
+.title-HTML {   
+    position: relative;
+    top: 20%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    color:#bcd1f2;
+    font-size: 30px;
+    font-style:italic;
+    text-align: center;
+}
+
+.paragraph-HTML {
+    position: relative;
+    top: 35%;
     left: 50%;
+    transform: translate(-50%, -50%);
+    color:#67707e;
+    text-align: center;
+}
+
+.title-CSS {   
+    position: relative;
+    top: 50%;
+    left : 50%;
     transform: translate(-50%, -50%);
     color:#bcd1f2;
     font-size: 30px;
@@ -215,15 +240,14 @@ header .help-btn:hover {
     text-align: center;
 }
 
-.paragraph {
-    position: absolute;
-    margin-top: 10px;
+.paragraph-CSS {
+    position: relative;
     margin-bottom: 10px;
-    margin-left: 30px;
-    margin-right: 30px;
-    display:contents;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     color:#67707e;
-    text-align:justify;
+    text-align: center;
 }
 
 .footer {

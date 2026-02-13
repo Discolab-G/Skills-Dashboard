@@ -1,0 +1,1 @@
+// Création d'un fichier de renvoi vers le code source d'un élément de page Web. 
