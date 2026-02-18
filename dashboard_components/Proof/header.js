@@ -122,3 +122,27 @@ helpContent?.addEventListener("click", (e) => {
     openHelp(target.dataset.target);
   }
 });
+
+// ===== Menu panel =====
+const menuPanel = document.getElementById("menuPanel");
+const menuOverlay = document.getElementById("menuOverlay");
+const menuOpen = document.getElementById("menuOpen");
+const menuClose = document.getElementById("menuClose");
+
+function openMenu() {
+  if (!menuPanel || !menuOverlay) return;
+  menuPanel.classList.add("open");
+  menuOverlay.hidden = false;
+  menuPanel.setAttribute("aria-hidden", "false");
+}
+
+function closeMenu() {
+  if (!menuPanel || !menuOverlay) return;
+  menuPanel.classList.remove("open");
+  menuOverlay.hidden = true;
+  menuPanel.setAttribute("aria-hidden", "true");
+}
+
+menuOpen?.addEventListener("click", openMenu);
+menuClose?.addEventListener("click", closeMenu);
+menuOverlay?.addEventListener("click", closeMenu);
